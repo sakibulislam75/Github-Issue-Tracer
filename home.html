@@ -29,16 +29,16 @@
         </div>
     </header>
     <section class="w-11/12 mx-auto bg-white shadow-sm my-5 space-x-2.5 p-3 mt-6">
-        <button class="btn btn-primary text-white">All</button>
-        <button class="btn bg-gray-100">Open</button>
-        <button class="btn  bg-gray-100">Closed</button>
+        <button id="all" onclick="toggleStyle('all')" class="btn btn-primary selected text-white">All</button>
+        <button id="open" onclick="toggleStyle('open')" class="btn bg-gray-100">Open</button>
+        <button id="close" onclick="toggleStyle('close')" class="btn  bg-gray-100">Closed</button>
     </section>
     <section class="w-11/12 mx-auto bg-white shadow-sm my-5 space-x-2.5 p-3 mt-7">
         <div class="flex justify-between">
             <div class="flex gap-2 items-center">
                 <div><img src="./assets/Aperture.png" alt="" class="bg-gray-100 rounded-full p-2"></div>
                 <div>
-                    <p><span id="total-issues"></span><span class="font-bold">Issues</span></p>
+                    <p><span id="total-issues"></span><span class="font-bold"> Issues</span></p>
                     <h3>Track and manage your project issues</h3>
                 </div>
             </div>
@@ -48,9 +48,10 @@
             </div>
         </div>
     </section>
-    <section id="container" class="grid grid-cols-1 md:grid-cols-4 gap-2.5 w-11/12">
+    <section id="container" class="grid grid-cols-1 md:grid-cols-4 gap-2.5 w-11/12 mx-auto bg-base-100">
 
     </section>
+    <script src="./script/homepage.js"></script>
 </body>
 
 </html>
