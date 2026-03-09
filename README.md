@@ -6,7 +6,7 @@
 
 `var`, `let`, and `const` are all used to declare variables in JavaScript but they behave differently.
 
-### 🔹 `var`
+###  `var`
 `var` is the old way of declaring variables. It is **function-scoped**, meaning it is accessible anywhere inside the function it was declared in. One big problem with `var` is that it can be **re-declared** and **updated**, which can cause unexpected bugs.
 
 ```js
@@ -24,7 +24,7 @@ var age = 22;
 
 ---
 
-### 🔹 `let`
+###  `let`
 `let` is the modern replacement for `var`. It is **block-scoped**, meaning it only lives inside the `{}` it was declared in. It can be **updated** but **not re-declared** in the same scope.
 
 ```js
@@ -42,7 +42,7 @@ console.log(x); // Error! x is not defined outside the block
 
 ---
 
-### 🔹 `const`
+###  `const`
 `const` is used when the value will **never change**. It is also block-scoped like `let`, but it **cannot be updated or re-declared**.
 
 ```js
@@ -64,7 +64,7 @@ user = {}; // Error! Cannot reassign
 
 The spread operator (`...`) is used to **expand** an array or object into individual elements. It is super handy when copying, merging, or passing data around.
 
-### 🔹 With Arrays
+###  With Arrays
 
 ```js
 const nums = [1, 2, 3];
@@ -72,7 +72,7 @@ const moreNums = [...nums, 4, 5];
 console.log(moreNums); // [1, 2, 3, 4, 5]
 ```
 
-### 🔹 Copying an Array
+###  Copying an Array
 
 ```js
 const original = [10, 20, 30];
@@ -81,7 +81,7 @@ copy.push(40);
 console.log(original); // [10, 20, 30] — not affected
 ```
 
-### 🔹 With Objects
+###  With Objects
 
 ```js
 const user = { name: "Sakib", age: 22 };
@@ -89,7 +89,7 @@ const updatedUser = { ...user, city: "Dhaka" };
 console.log(updatedUser); // { name: "Sakib", age: 22, city: "Dhaka" }
 ```
 
-### 🔹 In Function Arguments
+###  In Function Arguments
 
 ```js
 function add(a, b, c) {
@@ -105,7 +105,7 @@ console.log(add(...values)); // 6
 
 All three loop through arrays but they serve different purposes.
 
-### 🔹 `map()`
+###  `map()`
 `map()` loops through an array and **returns a new array** with transformed values. The original array is not changed.
 
 ```js
@@ -118,7 +118,7 @@ Use `map()` when you want to **transform** each item.
 
 ---
 
-### 🔹 `filter()`
+###  `filter()`
 `filter()` loops through an array and **returns a new array** with only the items that pass a condition.
 
 ```js
@@ -131,7 +131,7 @@ Use `filter()` when you want to **keep some items and remove others**.
 
 ---
 
-### 🔹 `forEach()`
+###  `forEach()`
 `forEach()` loops through an array and **does not return anything**. It is used for side effects like logging, updating the DOM, etc.
 
 ```js
@@ -146,23 +146,13 @@ fruits.forEach(fruit => {
 
 Use `forEach()` when you just want to **do something** with each item without needing a new array back.
 
----
 
-### Quick Comparison
-
-| Method | Returns New Array | Use Case |
-|---|---|---|
-| `map()` | ✅ Yes | Transform each item |
-| `filter()` | ✅ Yes | Keep items matching condition |
-| `forEach()` | ❌ No | Side effects only |
-
----
 
 ## 4. What is an Arrow Function?
 
 An arrow function is a shorter and cleaner way to write functions in JavaScript introduced in ES6.
 
-### 🔹 Regular Function vs Arrow Function
+###  Regular Function vs Arrow Function
 
 ```js
 // Regular function
@@ -190,7 +180,7 @@ const add = (a, b) => {
 };
 ```
 
-### 🔹 One important difference
+###  One important difference
 Arrow functions do **not have their own `this`**. They take `this` from the surrounding scope. This is very useful inside callbacks and array methods.
 
 ```js
@@ -211,7 +201,7 @@ obj.greet(); // Hello Sakib
 
 Template literals are a modern way to write strings in JavaScript using **backticks** (`` ` ``) instead of quotes. They make it easy to embed variables and expressions directly inside strings.
 
-### 🔹 Old way vs Template Literals
+###  Old way vs Template Literals
 
 ```js
 // Old way
@@ -222,7 +212,7 @@ console.log("Hello, " + name + "!");
 console.log(`Hello, ${name}!`);
 ```
 
-### 🔹 Multi-line Strings
+###  Multi-line Strings
 
 With regular strings, multi-line text needed `\n`. With template literals, just press Enter.
 
@@ -233,7 +223,7 @@ Have a great day!`;
 console.log(message);
 ```
 
-### 🔹 Expressions Inside
+###  Expressions Inside
 
 You can put any JavaScript expression inside `${}`:
 
@@ -244,7 +234,7 @@ console.log(`Sum is: ${a + b}`); // Sum is: 30
 console.log(`Is even: ${a % 2 === 0}`); // Is even: true
 ```
 
-### 🔹 With Functions
+###  With Functions
 
 ```js
 const name = "Fahim";
