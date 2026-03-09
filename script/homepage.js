@@ -19,7 +19,7 @@ function toggleStyle(id) {
 }
 
 async function loadAll() {
-    toggleStyle('all');
+
     const response = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     const dt = await response.json();
     displayCard(dt.data);
@@ -69,3 +69,18 @@ ${data.labels.map(label => `
 
    document.getElementById('total-issues').innerText = allData.length;
 }
+document.getElementById('open').addEventListener('click', async function() {
+    const response = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
+    const dt = await response.json();
+    const openData = dt.data.filter(item => item.status === 'open');
+    displayCard(openData);
+    document.getElementById('total-issues').innerText = ` ${openData.length}`;
+});
+
+document.getElementById('close').addEventListener('click', async function() {
+    const response = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
+    const dt = await response.json();
+    const closeData = dt.data.filter(item => item.status === 'closed');
+    displayCard(closeData);
+    document.getElementById('total-issues').innerText = ` ${closeData.length}`;
+});
