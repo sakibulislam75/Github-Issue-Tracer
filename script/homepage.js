@@ -84,3 +84,12 @@ document.getElementById('close').addEventListener('click', async function() {
     displayCard(closeData);
     document.getElementById('total-issues').innerText = ` ${closeData.length}`;
 });
+
+
+//search using title
+document.getElementById('issues').addEventListener('click', async function() {
+    const searchText = document.getElementById('search').value.trim();
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`);
+    const data = await res.json();
+    displayCard(data.data);
+});
