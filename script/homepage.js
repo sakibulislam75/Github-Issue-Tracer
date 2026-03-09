@@ -17,7 +17,19 @@ function toggleStyle(id) {
     clickedBtn.classList.add('btn-primary', 'text-white');
 }
 
-
+// modal open function
+function openModal(data) {
+    document.getElementById('modal-title').innerText = data.title;
+    document.getElementById('modal-author').innerText = `Opened by ${data.author}`;
+    document.getElementById('modal-date').innerText = data.createdAt;
+    document.getElementById('modal-description').innerText = data.description;
+    document.getElementById('modal-assignee').innerText = data.author;
+    document.getElementById('modal-priority').innerText = data.priority;
+    document.getElementById('modal-labels').innerHTML = data.labels.map(label => `
+        <span class="text-xs border rounded-full px-3 py-1">${label}</span>
+    `).join('');
+    document.getElementById('my_modal_5').showModal();
+}
 //api call
 async function loadAll() {
     const response = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
